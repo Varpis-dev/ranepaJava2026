@@ -10,11 +10,11 @@ public class Employee {
     private double salary;        // зарплата
     private LocalDate hireDate;   // дата приема
 
-    // Пустой конструктор
+    // пустой конструктор
     public Employee() {
     }
 
-    // Конструктор со всеми параметрами
+    // конструктор со всеми параметрами
     public Employee(Long id, String name, String position, double salary, LocalDate hireDate) {
         this.id = id;
         this.name = name;
@@ -23,7 +23,7 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
-    // ===== Геттеры и сеттеры =====
+
 
     public Long getId() {
         return id;
@@ -65,7 +65,7 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
-    // ===== Метод toString =====
+    
 
     @Override
     public String toString() {
