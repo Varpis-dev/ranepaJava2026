@@ -21,7 +21,8 @@ public class HrmApplication {
             System.out.println("3. Delete employee by ID");
             System.out.println("4. Find employee by ID");
             System.out.println("5. Show statistics");
-            System.out.println("6. Exit");
+            System.out.println("6. Find employees by position");
+            System.out.println("7. Exit");
             System.out.print("Choose an option: ");
 
             String choice = scanner.nextLine();
@@ -106,7 +107,23 @@ public class HrmApplication {
                     break;
 
                 case "6":
+                    System.out.print("Enter position: ");
+                    String position = scanner.nextLine();
+
+                    List<Employee> foundEmployees = hrmService.findByPosition(position);
+
+                    if (foundEmployees.isEmpty()) {
+                        System.out.println("No employees found for this position.");
+                    } else {
+                        for (Employee employee : foundEmployees) {
+                            System.out.println(employee);
+                        }
+                    }
+                    break;
+
+                case "7":
                     System.out.println("Exit from program.");
+                    scanner.close();
                     return;
 
                 default:
